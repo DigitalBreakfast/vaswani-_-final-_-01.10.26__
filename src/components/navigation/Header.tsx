@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="absolute top-0 left-0 right-0 z-50 pointer-events-none h-[88px] sm:h-[96px]"
+      className="absolute top-0 left-0 right-0 z-50 pointer-events-none h-[100px] sm:h-[112px] lg:h-[120px]"
     >
       <div className="w-full max-w-[1440px] h-full mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
         {/* ========================================================================= */}
@@ -74,7 +74,7 @@ export const Header: React.FC = () => {
             <img
               src="https://res.cloudinary.com/ds5s7shuo/image/upload/v1788429433/WhatsApp_Image_2026-09-03_at_15.24.36-removebg-preview_ce4ow7.png"
               alt="Vaswani Group"
-              className="h-full max-h-[72px] sm:max-h-[78px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-85"
+              className="h-full max-h-[92px] sm:max-h-[104px] lg:max-h-[114px] w-auto object-contain transition-all duration-300 group-hover:opacity-85 scale-110 sm:scale-120 origin-left"
             />
           </button>
         </div>

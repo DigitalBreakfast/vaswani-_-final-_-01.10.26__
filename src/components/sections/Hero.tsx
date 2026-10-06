@@ -42,9 +42,9 @@ export const HERO_SLIDES: HeroSlide[] = [
     category: 'STRATEGIC LOCATIONS',
     mediaType: 'video',
     mediaUrl:
-      'https://res.cloudinary.com/ds5s7shuo/video/upload/v1788735846/Transition_between_frames_202609070433_gopqta.mp4',
+      'https://res.cloudinary.com/ds5s7shuo/video/upload/v1787995629/Architectural_sketch_converging___202608291456_jw5qjn.mp4',
     posterUrl:
-      'https://res.cloudinary.com/ds5s7shuo/video/upload/so_0/v1788735846/Transition_between_frames_202609070433_gopqta.jpg',
+      'https://res.cloudinary.com/ds5s7shuo/video/upload/so_0/v1787995629/Architectural_sketch_converging___202608291456_jw5qjn.jpg',
     duration: 8000,
   },
 ];

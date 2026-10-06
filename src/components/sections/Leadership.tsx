@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, ArrowUp } from 'lucide-react';
+import { ArrowRight, ArrowUp, Briefcase, Compass, Award } from 'lucide-react';
 import { useCursor } from '../../context/CursorContext';
 
 interface LeaderProfile {
@@ -116,14 +116,14 @@ export const Leadership: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-[#d7c2a3] rounded-[28px] p-6 sm:p-8 lg:p-10 border border-[#bfa682] shadow-[0_16px_45px_rgba(10,47,40,0.08)]"
+            className="bg-[#2C1E16] rounded-[28px] p-6 sm:p-8 lg:p-10 border border-[#4A3728]/50 shadow-[0_20px_50px_rgba(44,30,22,0.18)] text-white"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               
               {/* Portrait */}
               <div className="lg:col-span-4 xl:col-span-4">
                 <div
-                  className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] max-h-[380px] overflow-hidden rounded-2xl bg-[#c5b090] shadow-sm group"
+                  className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] max-h-[380px] overflow-hidden rounded-2xl bg-[#1E140E] shadow-sm group"
                   onMouseEnter={() => setCursorVariant('explore', 'LEADERSHIP')}
                   onMouseLeave={resetCursor}
                 >
@@ -133,11 +133,16 @@ export const Leadership: React.FC = () => {
                     className="w-full h-full object-cover object-center filter grayscale-[15%] contrast-[1.04] brightness-[0.98] transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-100"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F28]/70 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-4 right-4 flex items-end justify-end pointer-events-none">
-                    <span className="px-3.5 py-1.5 rounded-full bg-[#FAF8F5]/95 backdrop-blur-sm text-[16px] md:text-[17px] lg:text-[18px] font-sans tracking-wide uppercase font-medium text-[#0A2F28] border border-[#0A2F28]/10">
-                      {LEADERS[0].designation}
-                    </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C1E16]/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3.5 right-3.5 flex items-end justify-end pointer-events-auto">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-[#D4AF37]/50 shadow-[0_4px_16px_rgba(0,0,0,0.35)] text-white hover:border-[#D4AF37] hover:bg-black/80 hover:scale-[1.03] transition-all duration-300 group/badge cursor-default">
+                      <div className="w-5 h-5 rounded-full bg-[#D4AF37]/15 flex items-center justify-center border border-[#D4AF37]/35">
+                        <Briefcase className="w-3 h-3 text-[#D4AF37]" />
+                      </div>
+                      <span className="font-sans text-[11px] sm:text-[12px] tracking-[0.16em] uppercase font-semibold text-white/95 leading-none">
+                        {LEADERS[0].designation}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -145,21 +150,21 @@ export const Leadership: React.FC = () => {
               {/* Content */}
               <div className="lg:col-span-8 xl:col-span-8 space-y-4">
                 {/* Leader Name - Level 02: Cormorant Garamond */}
-                <div className="border-b border-[#0A2F28]/15 pb-3">
-                  <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-[#0A2F28] tracking-tight leading-[1.1]">
+                <div className="border-b border-white/20 pb-3">
+                  <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-white tracking-tight leading-[1.1]">
                     {LEADERS[0].name}
                   </h3>
                 </div>
 
                 {/* Featured Quote - Level 03: Plus Jakarta Sans */}
-                <div className="relative pl-4 sm:pl-5 border-l-2 border-[#0A2F28] py-0.5">
-                  <blockquote className="font-sans text-[20px] md:text-[22px] lg:text-[24px] font-normal italic leading-[1.5] text-[#0A2F28] max-w-[700px]">
+                <div className="relative pl-4 sm:pl-5 border-l-2 border-[#D4AF37] py-0.5">
+                  <blockquote className="font-sans text-[20px] md:text-[22px] lg:text-[24px] font-normal italic leading-[1.5] text-white max-w-[700px]">
                     "{LEADERS[0].quote}"
                   </blockquote>
                 </div>
 
                 {/* Short Introduction - Level 04: Plus Jakarta Sans */}
-                <p className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28]/90 font-normal leading-relaxed">
+                <p className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-white/90 font-normal leading-relaxed">
                   {LEADERS[0].intro}
                 </p>
 
@@ -174,11 +179,11 @@ export const Leadership: React.FC = () => {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="pt-3 pb-1 space-y-3.5 border-t border-[#0A2F28]/15">
+                      <div className="pt-3 pb-1 space-y-3.5 border-t border-white/20">
                         {LEADERS[0].fullMessage.slice(1).map((p, i) => (
                           <p
                             key={i}
-                            className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28]/90 font-normal leading-relaxed"
+                            className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-white/90 font-normal leading-relaxed"
                           >
                             {p}
                           </p>
@@ -194,7 +199,7 @@ export const Leadership: React.FC = () => {
                     onClick={() => toggleExpand(LEADERS[0].id)}
                     onMouseEnter={() => setCursorVariant('pointer')}
                     onMouseLeave={resetCursor}
-                    className="group inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-[#152E28]/35 hover:border-[#152E28] hover:bg-[#152E28] hover:text-[#d7c2a3] text-[#152E28] font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-medium transition-all duration-300 cursor-pointer shadow-xs"
+                    className="group inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-white/35 hover:border-white hover:bg-white hover:text-[#2C1E16] text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-medium transition-all duration-300 cursor-pointer shadow-xs"
                     aria-expanded={Boolean(expanded[LEADERS[0].id])}
                   >
                     <span>
@@ -221,27 +226,27 @@ export const Leadership: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-[#d7c2a3] rounded-[28px] p-6 sm:p-8 lg:p-10 border border-[#bfa682] shadow-[0_16px_45px_rgba(10,47,40,0.08)]"
+            className="bg-[#2C1E16] rounded-[28px] p-6 sm:p-8 lg:p-10 border border-[#4A3728]/50 shadow-[0_20px_50px_rgba(44,30,22,0.18)] text-white"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               
               <div className="lg:col-span-8 xl:col-span-8 space-y-4 order-2 lg:order-1">
                 {/* Leader Name - Level 02: Cormorant Garamond */}
-                <div className="border-b border-[#0A2F28]/15 pb-3">
-                  <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-[#0A2F28] tracking-tight leading-[1.1]">
+                <div className="border-b border-white/20 pb-3">
+                  <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-white tracking-tight leading-[1.1]">
                     {LEADERS[1].name}
                   </h3>
                 </div>
 
                 {/* Featured Quote - Level 03: Plus Jakarta Sans */}
-                <div className="relative pl-4 sm:pl-5 border-l-2 border-[#0A2F28] py-0.5">
-                  <blockquote className="font-sans text-[20px] md:text-[22px] lg:text-[24px] font-normal italic leading-[1.5] text-[#0A2F28] max-w-[700px]">
+                <div className="relative pl-4 sm:pl-5 border-l-2 border-[#D4AF37] py-0.5">
+                  <blockquote className="font-sans text-[20px] md:text-[22px] lg:text-[24px] font-normal italic leading-[1.5] text-white max-w-[700px]">
                     "{LEADERS[1].quote}"
                   </blockquote>
                 </div>
 
                 {/* Short Introduction - Level 04: Plus Jakarta Sans */}
-                <p className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28]/90 font-normal leading-relaxed">
+                <p className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-white/90 font-normal leading-relaxed">
                   {LEADERS[1].intro}
                 </p>
 
@@ -256,11 +261,11 @@ export const Leadership: React.FC = () => {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="pt-3 pb-1 space-y-3.5 border-t border-[#0A2F28]/15">
+                      <div className="pt-3 pb-1 space-y-3.5 border-t border-white/20">
                         {LEADERS[1].fullMessage.slice(1).map((p, i) => (
                           <p
                             key={i}
-                            className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28]/90 font-normal leading-relaxed"
+                            className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-white/90 font-normal leading-relaxed"
                           >
                             {p}
                           </p>
@@ -276,7 +281,7 @@ export const Leadership: React.FC = () => {
                     onClick={() => toggleExpand(LEADERS[1].id)}
                     onMouseEnter={() => setCursorVariant('pointer')}
                     onMouseLeave={resetCursor}
-                    className="group inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-[#152E28]/35 hover:border-[#152E28] hover:bg-[#152E28] hover:text-[#d7c2a3] text-[#152E28] font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-medium transition-all duration-300 cursor-pointer shadow-xs"
+                    className="group inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-white/35 hover:border-white hover:bg-white hover:text-[#2C1E16] text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-medium transition-all duration-300 cursor-pointer shadow-xs"
                     aria-expanded={Boolean(expanded[LEADERS[1].id])}
                   >
                     <span>
@@ -297,7 +302,7 @@ export const Leadership: React.FC = () => {
               {/* Portrait */}
               <div className="lg:col-span-4 xl:col-span-4 order-1 lg:order-2">
                 <div
-                  className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] max-h-[380px] overflow-hidden rounded-2xl bg-[#c5b090] shadow-sm group"
+                  className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] max-h-[380px] overflow-hidden rounded-2xl bg-[#1E140E] shadow-sm group"
                   onMouseEnter={() => setCursorVariant('explore', 'LEADERSHIP')}
                   onMouseLeave={resetCursor}
                 >
@@ -307,11 +312,16 @@ export const Leadership: React.FC = () => {
                     className="w-full h-full object-cover object-center filter grayscale-[15%] contrast-[1.04] brightness-[0.98] transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-100"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F28]/70 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-4 right-4 flex items-end justify-end pointer-events-none">
-                    <span className="px-3.5 py-1.5 rounded-full bg-[#FAF8F5]/95 backdrop-blur-sm text-[16px] md:text-[17px] lg:text-[18px] font-sans tracking-wide uppercase font-medium text-[#0A2F28] border border-[#0A2F28]/10">
-                      {LEADERS[1].designation}
-                    </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C1E16]/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3.5 right-3.5 flex items-end justify-end pointer-events-auto">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-[#D4AF37]/50 shadow-[0_4px_16px_rgba(0,0,0,0.35)] text-white hover:border-[#D4AF37] hover:bg-black/80 hover:scale-[1.03] transition-all duration-300 group/badge cursor-default">
+                      <div className="w-5 h-5 rounded-full bg-[#D4AF37]/15 flex items-center justify-center border border-[#D4AF37]/35">
+                        <Compass className="w-3 h-3 text-[#D4AF37]" />
+                      </div>
+                      <span className="font-sans text-[11px] sm:text-[12px] tracking-[0.16em] uppercase font-semibold text-white/95 leading-none">
+                        {LEADERS[1].designation}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -325,14 +335,14 @@ export const Leadership: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-[#d7c2a3] rounded-[28px] p-6 sm:p-8 lg:p-10 border border-[#bfa682] shadow-[0_16px_45px_rgba(10,47,40,0.08)]"
+            className="bg-[#2C1E16] rounded-[28px] p-6 sm:p-8 lg:p-10 border border-[#4A3728]/50 shadow-[0_20px_50px_rgba(44,30,22,0.18)] text-white"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               
               {/* Portrait */}
               <div className="lg:col-span-4 xl:col-span-4">
                 <div
-                  className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] max-h-[380px] overflow-hidden rounded-2xl bg-[#c5b090] shadow-sm group"
+                  className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] max-h-[380px] overflow-hidden rounded-2xl bg-[#1E140E] shadow-sm group"
                   onMouseEnter={() => setCursorVariant('explore', 'LEADERSHIP')}
                   onMouseLeave={resetCursor}
                 >
@@ -342,11 +352,16 @@ export const Leadership: React.FC = () => {
                     className="w-full h-full object-cover object-center filter grayscale-[15%] contrast-[1.04] brightness-[0.98] transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-100"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2F28]/70 via-transparent to-transparent pointer-events-none" />
-                  <div className="absolute bottom-4 right-4 flex items-end justify-end pointer-events-none">
-                    <span className="px-3.5 py-1.5 rounded-full bg-[#FAF8F5]/95 backdrop-blur-sm text-[16px] md:text-[17px] lg:text-[18px] font-sans tracking-wide uppercase font-medium text-[#0A2F28] border border-[#0A2F28]/10">
-                      {LEADERS[2].designation}
-                    </span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2C1E16]/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3.5 right-3.5 flex items-end justify-end pointer-events-auto">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-[#D4AF37]/50 shadow-[0_4px_16px_rgba(0,0,0,0.35)] text-white hover:border-[#D4AF37] hover:bg-black/80 hover:scale-[1.03] transition-all duration-300 group/badge cursor-default">
+                      <div className="w-5 h-5 rounded-full bg-[#D4AF37]/15 flex items-center justify-center border border-[#D4AF37]/35">
+                        <Award className="w-3 h-3 text-[#D4AF37]" />
+                      </div>
+                      <span className="font-sans text-[11px] sm:text-[12px] tracking-[0.16em] uppercase font-semibold text-white/95 leading-none">
+                        {LEADERS[2].designation}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -354,21 +369,21 @@ export const Leadership: React.FC = () => {
               {/* Content */}
               <div className="lg:col-span-8 xl:col-span-8 space-y-4">
                 {/* Leader Name - Level 02: Cormorant Garamond */}
-                <div className="border-b border-[#0A2F28]/15 pb-3">
-                  <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-[#0A2F28] tracking-tight leading-[1.1]">
+                <div className="border-b border-white/20 pb-3">
+                  <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-white tracking-tight leading-[1.1]">
                     {LEADERS[2].name}
                   </h3>
                 </div>
 
                 {/* Featured Quote - Level 03: Plus Jakarta Sans */}
-                <div className="relative pl-4 sm:pl-5 border-l-2 border-[#0A2F28] py-0.5">
-                  <blockquote className="font-sans text-[20px] md:text-[22px] lg:text-[24px] font-normal italic leading-[1.5] text-[#0A2F28] max-w-[700px]">
+                <div className="relative pl-4 sm:pl-5 border-l-2 border-[#D4AF37] py-0.5">
+                  <blockquote className="font-sans text-[20px] md:text-[22px] lg:text-[24px] font-normal italic leading-[1.5] text-white max-w-[700px]">
                     "{LEADERS[2].quote}"
                   </blockquote>
                 </div>
 
                 {/* Short Introduction - Level 04: Plus Jakarta Sans */}
-                <p className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28]/90 font-normal leading-relaxed">
+                <p className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-white/90 font-normal leading-relaxed">
                   {LEADERS[2].intro}
                 </p>
 
@@ -383,11 +398,11 @@ export const Leadership: React.FC = () => {
                       transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="pt-3 pb-1 space-y-3.5 border-t border-[#0A2F28]/15">
+                      <div className="pt-3 pb-1 space-y-3.5 border-t border-white/20">
                         {LEADERS[2].fullMessage.slice(1).map((p, i) => (
                           <p
                             key={i}
-                            className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28]/90 font-normal leading-relaxed"
+                            className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-white/90 font-normal leading-relaxed"
                           >
                             {p}
                           </p>
@@ -403,7 +418,7 @@ export const Leadership: React.FC = () => {
                     onClick={() => toggleExpand(LEADERS[2].id)}
                     onMouseEnter={() => setCursorVariant('pointer')}
                     onMouseLeave={resetCursor}
-                    className="group inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-[#152E28]/35 hover:border-[#152E28] hover:bg-[#152E28] hover:text-[#d7c2a3] text-[#152E28] font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-medium transition-all duration-300 cursor-pointer shadow-xs"
+                    className="group inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-white/35 hover:border-white hover:bg-white hover:text-[#2C1E16] text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-medium transition-all duration-300 cursor-pointer shadow-xs"
                     aria-expanded={Boolean(expanded[LEADERS[2].id])}
                   >
                     <span>

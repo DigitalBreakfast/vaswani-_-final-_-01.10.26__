@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Compass, Sparkles, LucideIcon } from 'lucide-react';
 import { useCursor } from '../../context/CursorContext';
 
 interface PurposeCard {
@@ -8,7 +7,6 @@ interface PurposeCard {
   eyebrow: string;
   title: string;
   statement: string;
-  icon: LucideIcon;
 }
 
 const PURPOSE_CARDS: PurposeCard[] = [
@@ -18,7 +16,6 @@ const PURPOSE_CARDS: PurposeCard[] = [
     title: 'Mission',
     statement:
       'To craft iconic developments and thriving communities, driven by global standards, superior craftsmanship, and enduring excellence.',
-    icon: Compass,
   },
   {
     id: 'vision',
@@ -26,7 +23,6 @@ const PURPOSE_CARDS: PurposeCard[] = [
     title: 'Vision',
     statement:
       'To be the benchmark of exceptional living, characterised by bespoke designs, elevated experiences, and a legacy of enduring excellence.',
-    icon: Sparkles,
   },
 ];
 
@@ -74,7 +70,6 @@ export const WhatWeStandFor: React.FC = () => {
         {/* ========================================================================= */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           {PURPOSE_CARDS.map((card, index) => {
-            const Icon = card.icon;
             return (
               <motion.article
                 key={card.id}
@@ -90,14 +85,8 @@ export const WhatWeStandFor: React.FC = () => {
                 onMouseLeave={resetCursor}
                 className="group relative bg-[#152E28] text-white rounded-[24px] p-8 sm:p-10 lg:p-12 border border-[#152E28] shadow-[0_16px_40px_-12px_rgba(21,46,40,0.35)] hover:shadow-[0_22px_48px_-10px_rgba(21,46,40,0.45)] hover:-translate-y-1 transition-all duration-500 ease-out flex flex-col justify-between"
               >
-                {/* Top Section: Icon & Header */}
+                {/* Top Section: Header */}
                 <div className="space-y-6 sm:space-y-8">
-                  <div>
-                    <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 text-white flex items-center justify-center group-hover:bg-white group-hover:text-[#152E28] transition-all duration-500">
-                      <Icon className="w-5 h-5 transition-transform duration-500 group-hover:scale-105" strokeWidth={1.5} />
-                    </div>
-                  </div>
-
                   {/* Card Title - Level 02: Cormorant Garamond */}
                   <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-white tracking-tight leading-[1.1]">
                     {card.title}
