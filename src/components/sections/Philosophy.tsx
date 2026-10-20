@@ -36,8 +36,8 @@ export const Philosophy: React.FC = () => {
               <span className="w-full h-px bg-[#135A5C]/40 mt-1.5" />
             </motion.div>
 
-            {/* MAIN HEADING: Cormorant Garamond, Large Editorial Scale, Line-by-Line Reveal */}
-            <div className="overflow-hidden space-y-1 sm:space-y-2">
+            {/* MAIN HEADING: Cormorant Garamond, Large Editorial Scale */}
+            <div className="overflow-hidden">
               <motion.div
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -45,60 +45,38 @@ export const Philosophy: React.FC = () => {
                 transition={{ duration: 1.0, delay: 0.08, ease: easeTransition }}
               >
                 <h2 className="font-editorial text-[48px] sm:text-[60px] lg:text-[68px] xl:text-[76px] font-light leading-[1.04] tracking-tight text-[#135A5C]">
-                  Simply
-                </h2>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 1.0, delay: 0.2, ease: easeTransition }}
-              >
-                <h2 className="font-editorial text-[48px] sm:text-[60px] lg:text-[68px] xl:text-[76px] font-light leading-[1.04] tracking-tight text-[#135A5C]">
-                  Feels <span className="italic font-normal">Right.</span>
+                  Simply Feels <span className="italic font-normal">Right.</span>
                 </h2>
               </motion.div>
             </div>
 
-            {/* LEAD PARAGRAPH: Slightly larger than body, medium weight, dark green */}
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.9, delay: 0.32, ease: easeTransition }}
-              className="font-sans text-[20px] sm:text-[22px] font-medium text-[#135A5C] leading-[1.4] tracking-tight"
-            >
-              The foundation of everything we build.
-            </motion.p>
-
-            {/* BODY COPY: Plus Jakarta Sans, 18px, generous line height, max-w ~520px */}
-            <div className="space-y-5 font-sans text-[18px] text-[#135A5C]/85 font-light leading-[1.75] max-w-[520px]">
+            {/* BODY COPY: Plus Jakarta Sans, generous line height, max-w ~560px */}
+            <div className="space-y-5 font-sans text-[17px] sm:text-[18px] text-[#135A5C]/85 font-light leading-[1.75] max-w-[560px]">
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.85, delay: 0.44, ease: easeTransition }}
+                transition={{ duration: 0.85, delay: 0.25, ease: easeTransition }}
               >
-                For over four decades, we have believed that the right home never needs to be sold.
+                You know it the moment you step inside. The light settles where you hoped it would. The noise of the city drops away. Your shoulders ease before you have put down your keys.
               </motion.p>
 
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.85, delay: 0.54, ease: easeTransition }}
+                transition={{ duration: 0.85, delay: 0.35, ease: easeTransition }}
               >
-                It speaks through thoughtful design, uncompromising quality, and spaces created around the people who live in them.
+                For over four decades, we have believed that the right home never needs to be sold. We build for that first moment, and for the thousands of ordinary evenings that follow it.
               </motion.p>
 
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.85, delay: 0.64, ease: easeTransition }}
+                transition={{ duration: 0.85, delay: 0.45, ease: easeTransition }}
               >
-                Every decision, from architecture and planning to craftsmanship and delivery, is guided by one simple belief: a home should continue to feel right long after the keys are handed over.
+                Every decision, from the first sketch to the day we hand over the keys, answers to the same test. Will this home still feel right when the children have grown and the walls have heard a lifetime?
               </motion.p>
             </div>
 

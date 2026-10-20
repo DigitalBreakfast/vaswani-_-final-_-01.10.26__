@@ -85,7 +85,7 @@ export const EnquiryDrawer: React.FC = () => {
             {/* Header */}
             <div className="p-6 sm:p-8 border-b border-[#EAE4D6] flex items-center justify-between sticky top-0 bg-[#FAF8F5]/95 backdrop-blur-xl z-20">
               <div>
-                <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] uppercase tracking-wider text-[#152E28] font-semibold block">
+                <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] uppercase tracking-wider text-[#1C443B] font-semibold block">
                   Private Office Advisory
                 </span>
                 <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-[#1A1C1E] mt-1 leading-[1.1]">
@@ -107,11 +107,11 @@ export const EnquiryDrawer: React.FC = () => {
             <div className="p-6 sm:p-8 flex-1">
               {isSubmitted ? (
                 <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-12">
-                  <div className="w-16 h-16 rounded-full bg-[#152E28]/10 border border-[#152E28] flex items-center justify-center text-[#152E28] animate-bounce">
+                  <div className="w-16 h-16 rounded-full bg-[#1C443B]/10 border border-[#1C443B] flex items-center justify-center text-[#1C443B] animate-bounce">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <div className="space-y-2 max-w-md">
-                    <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] uppercase tracking-wider text-[#152E28] font-semibold block">
+                    <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] uppercase tracking-wider text-[#1C443B] font-semibold block">
                       Consultation Requested
                     </span>
                     <h4 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-[#1A1C1E] leading-[1.1]">
@@ -200,7 +200,7 @@ export const EnquiryDrawer: React.FC = () => {
                         label={
                           <span>
                             I agree to receive confidential correspondence and acknowledge the{' '}
-                            <span className="text-[#152E28] underline font-semibold">Privacy Charter</span>.
+                            <span className="text-[#1C443B] underline font-semibold">Privacy Charter</span>.
                           </span>
                         }
                       />
@@ -229,9 +229,9 @@ export const EnquiryDrawer: React.FC = () => {
             {/* Direct Line Footer - Level 04 */}
             <div className="p-6 bg-[#F5F2EA] border-t border-[#EAE4D6] flex items-center justify-between font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#6C7382]">
               <span className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#152E28]" /> Concierge Direct
+                <Phone className="w-4 h-4 text-[#1C443B]" /> Concierge Direct
               </span>
-              <a href="tel:+918049111000" className="text-[#1A1C1E] hover:text-[#152E28] font-semibold">
+              <a href="tel:+918049111000" className="text-[#1A1C1E] hover:text-[#1C443B] font-semibold">
                 +91 80 4911 1000
               </a>
             </div>

@@ -28,7 +28,7 @@ export const AboutFinalCTA: React.FC<AboutFinalCTAProps> = ({
   return (
     <section
       id="about-final-cta"
-      className="relative w-full min-h-[80vh] bg-[#0A2F28] text-white flex items-center justify-center py-24 sm:py-32 lg:py-36 px-6 sm:px-10 lg:px-16 select-none overflow-hidden"
+      className="relative w-full min-h-[80vh] bg-[#1C443B] text-white flex items-center justify-center py-24 sm:py-32 lg:py-36 px-6 sm:px-10 lg:px-16 select-none overflow-hidden"
       aria-label="Find A Place That Simply Feels Right — Vaswani Group"
     >
       {/* 1. BACKGROUND CINEMATIC LOOPING VIDEO */}
@@ -44,8 +44,8 @@ export const AboutFinalCTA: React.FC<AboutFinalCTAProps> = ({
           <source src={videoUrl} type="video/mp4" />
         </video>
 
-        <div className="absolute inset-0 bg-[#0A2F28]/45" />
-        <div className="absolute inset-0 bg-radial-at-c from-transparent via-[#0A2F28]/20 to-[#0A2F28]/60" />
+        <div className="absolute inset-0 bg-[#1C443B]/45" />
+        <div className="absolute inset-0 bg-radial-at-c from-transparent via-[#1C443B]/20 to-[#1C443B]/60" />
       </div>
 
       {/* 2. SOFT AMBIENT PARTICLES */}
@@ -110,10 +110,10 @@ export const AboutFinalCTA: React.FC<AboutFinalCTAProps> = ({
               onClick={handleExploreProjects}
               onMouseEnter={() => setCursorVariant('pointer')}
               onMouseLeave={resetCursor}
-              className="group w-full sm:w-auto inline-flex items-center justify-center gap-3.5 px-8 sm:px-10 h-[56px] rounded-full bg-white text-[#0A2F28] hover:bg-[#F4EFE6] font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-semibold transition-all duration-300 shadow-[0_12px_40px_rgba(0,0,0,0.25)] hover:shadow-[0_18px_50px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 cursor-pointer"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-3.5 px-8 sm:px-10 h-[56px] rounded-full bg-white text-[#1C443B] hover:bg-[#F4EFE6] font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-semibold transition-all duration-300 shadow-[0_12px_40px_rgba(0,0,0,0.25)] hover:shadow-[0_18px_50px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 cursor-pointer"
             >
               <span>Explore Our Projects</span>
-              <ArrowRight className="w-5 h-5 text-[#0A2F28] transition-transform duration-300 group-hover:translate-x-1.5" />
+              <ArrowRight className="w-5 h-5 text-[#1C443B] transition-transform duration-300 group-hover:translate-x-1.5" />
             </button>
 
             {/* Secondary Button */}

@@ -27,7 +27,7 @@ export const FloatingActions: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const whatsappNumber = '918049111000';
+  const whatsappNumber = '917738893992';
   const whatsappMessage = encodeURIComponent(
     'Hello Vaswani Group, I would like to enquire about your properties.'
   );
@@ -50,7 +50,7 @@ export const FloatingActions: React.FC = () => {
             onClick={handleScrollToTop}
             onMouseEnter={() => setCursorVariant('pointer')}
             onMouseLeave={resetCursor}
-            className="group relative w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center bg-[#152E28]/90 hover:bg-[#152E28] text-white backdrop-blur-lg border border-white/20 hover:border-white/40 shadow-[0_4px_20px_rgba(21,46,40,0.35),inset_0_1px_1px_rgba(255,255,255,0.25)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 focus:outline-none select-none cursor-pointer"
+            className="group relative w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center bg-[#1C443B]/90 hover:bg-[#1C443B] text-white backdrop-blur-lg border border-white/20 hover:border-white/40 shadow-[0_4px_20px_rgba(28, 68, 59,0.35),inset_0_1px_1px_rgba(255,255,255,0.25)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 focus:outline-none select-none cursor-pointer"
             aria-label="Scroll to top of page"
           >
             {/* Glass Specular Sheen */}
@@ -69,7 +69,7 @@ export const FloatingActions: React.FC = () => {
             {/* Tooltip - Level 04 */}
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-md bg-[#152E28]/95 text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-semibold whitespace-nowrap shadow-lg border border-white/10 backdrop-blur-md opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
+              className="pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-md bg-[#1C443B]/95 text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-semibold whitespace-nowrap shadow-lg border border-white/10 backdrop-blur-md opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
             >
               Top
             </span>
@@ -87,7 +87,7 @@ export const FloatingActions: React.FC = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="group relative w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center bg-[#152E28]/90 hover:bg-[#152E28] text-white backdrop-blur-lg border border-white/20 hover:border-white/40 shadow-[0_4px_20px_rgba(21,46,40,0.35),inset_0_1px_1px_rgba(255,255,255,0.25)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 focus:outline-none select-none cursor-pointer"
+        className="group relative w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center bg-[#1C443B]/90 hover:bg-[#1C443B] text-white backdrop-blur-lg border border-white/20 hover:border-white/40 shadow-[0_4px_20px_rgba(28, 68, 59,0.35),inset_0_1px_1px_rgba(255,255,255,0.25)] transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 focus:outline-none select-none cursor-pointer"
         aria-label="Contact Vaswani Group on WhatsApp"
       >
         {/* Glass Specular Sheen */}
@@ -99,7 +99,7 @@ export const FloatingActions: React.FC = () => {
         {/* Live status dot */}
         <span
           aria-hidden="true"
-          className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#25D366] ring-2 ring-[#152E28] shadow-[0_0_8px_rgba(37,211,102,0.8)]"
+          className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#25D366] ring-2 ring-[#1C443B] shadow-[0_0_8px_rgba(37,211,102,0.8)]"
         />
 
         {/* Icon */}
@@ -112,7 +112,7 @@ export const FloatingActions: React.FC = () => {
         {/* Tooltip - Level 04 */}
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-md bg-[#152E28]/95 text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-semibold whitespace-nowrap shadow-lg border border-white/10 backdrop-blur-md opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
+          className="pointer-events-none absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 rounded-md bg-[#1C443B]/95 text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-semibold whitespace-nowrap shadow-lg border border-white/10 backdrop-blur-md opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
         >
           WhatsApp
         </span>

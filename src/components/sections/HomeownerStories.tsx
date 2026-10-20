@@ -126,10 +126,13 @@ export const HomeownerStories: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-2xl"
+            className="max-w-2xl space-y-2"
           >
+            <span className="font-sans text-[13px] sm:text-[14px] tracking-[0.25em] uppercase text-[#135A5C]/70 font-semibold block">
+              VOICES OF OUR RESIDENTS
+            </span>
             <h2 className="font-editorial text-[38px] sm:text-[48px] lg:text-[58px] font-light leading-[1.08] text-[#135A5C] tracking-tight">
-              What Our Homeowners Say
+              Told by the people who live here.
             </h2>
           </motion.div>
 

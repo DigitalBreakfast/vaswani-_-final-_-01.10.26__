@@ -70,7 +70,7 @@ export const PartnerPage: React.FC = () => {
                 onClick={openEnquiryDrawer}
                 onMouseEnter={() => setCursorVariant('pointer')}
                 onMouseLeave={resetCursor}
-                className="group flex items-center justify-center gap-3 px-8 sm:px-9 py-4 rounded-full bg-[#152E28] hover:bg-[#1C3D35] text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-medium transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer hover:-translate-y-0.5"
+                className="group flex items-center justify-center gap-3 px-8 sm:px-9 py-4 rounded-full bg-[#1C443B] hover:bg-[#1C3D35] text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase font-medium transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer hover:-translate-y-0.5"
               >
                 <span>Initiate Partnership Inquiry</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -142,7 +142,7 @@ export const PartnerPage: React.FC = () => {
                       onClick={openEnquiryDrawer}
                       onMouseEnter={() => setCursorVariant('pointer')}
                       onMouseLeave={resetCursor}
-                      className="group flex items-center gap-2 text-[16px] md:text-[17px] lg:text-[18px] font-sans tracking-wide uppercase text-[#152E28] font-semibold hover:text-[#152E28]/80 transition-colors cursor-pointer"
+                      className="group flex items-center gap-2 text-[16px] md:text-[17px] lg:text-[18px] font-sans tracking-wide uppercase text-[#1C443B] font-semibold hover:text-[#1C443B]/80 transition-colors cursor-pointer"
                     >
                       <span>Discuss Opportunity</span>
                       <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

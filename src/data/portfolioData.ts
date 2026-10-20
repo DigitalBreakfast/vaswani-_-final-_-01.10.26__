@@ -1,7 +1,7 @@
 export type PortfolioCategory =
-  | 'Completed Portfolio'
-  | 'Recently Delivered'
-  | 'Ongoing & Upcoming';
+  | 'Delivered'
+  | 'Recently handed over'
+  | 'Rising now';
 
 export interface PortfolioProject {
   id: string;
@@ -29,20 +29,20 @@ export interface PortfolioProject {
 
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   // ─────────────────────────────────────────────────────────────
-  // 1. COMPLETED PORTFOLIO
-  // Display:
-  // • Belvedere
-  // • IRA Chhaya
-  // • Sea Garden
-  // • 36 AB
-  // • Vastu
+  // 1. DELIVERED
+  // Display (Corrected Locations):
+  // • Belvedere, Khar · 2007
+  // • Ira Chhaya, Santacruz · 2015
+  // • Sea Garden, Santacruz · 2016
+  // • 36 AB, Bandra · 2018
+  // • Vastu, Sion · 2021
   // ─────────────────────────────────────────────────────────────
   {
     id: 'belvedere',
     name: 'Belvedere',
-    location: 'Bandra West',
-    category: 'Completed Portfolio',
-    badge: 'Completed',
+    location: 'Khar',
+    category: 'Delivered',
+    badge: 'Delivered',
     year: '2007',
     completedYear: '2007',
     configuration: '2 & 3 BHK Luxury Residences',
@@ -52,10 +52,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   },
   {
     id: 'ira-chhaya',
-    name: 'IRA Chhaya',
-    location: 'Khar West',
-    category: 'Completed Portfolio',
-    badge: 'Completed',
+    name: 'Ira Chhaya',
+    location: 'Santacruz',
+    category: 'Delivered',
+    badge: 'Delivered',
     year: '2015',
     completedYear: '2015',
     configuration: '3 BHK Exclusive Residences',
@@ -66,9 +66,9 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'sea-garden',
     name: 'Sea Garden',
-    location: 'Santacruz West',
-    category: 'Completed Portfolio',
-    badge: 'Completed',
+    location: 'Santacruz',
+    category: 'Delivered',
+    badge: 'Delivered',
     year: '2016',
     completedYear: '2016',
     configuration: '2 & 3 BHK Sea View Residences',
@@ -79,9 +79,9 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: '36-ab',
     name: '36 AB',
-    location: 'Bandra West',
-    category: 'Completed Portfolio',
-    badge: 'Completed',
+    location: 'Bandra',
+    category: 'Delivered',
+    badge: 'Delivered',
     year: '2018',
     completedYear: '2018',
     configuration: '2 & 3 BHK High-Rise Residences',
@@ -92,9 +92,9 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: 'vastu',
     name: 'Vastu',
-    location: 'Sion West',
-    category: 'Completed Portfolio',
-    badge: 'Completed',
+    location: 'Sion',
+    category: 'Delivered',
+    badge: 'Delivered',
     year: '2021',
     completedYear: '2021',
     configuration: '3 BHK Vastu-Compliant Homes',
@@ -104,7 +104,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   },
 
   // ─────────────────────────────────────────────────────────────
-  // 2. RECENTLY DELIVERED
+  // 2. RECENTLY HANDED OVER
   // Display:
   // • Vista One
   // • Avania
@@ -114,8 +114,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     id: 'vista-one',
     name: 'Vista One',
     location: 'Kandivali West',
-    category: 'Recently Delivered',
-    badge: 'Recently Delivered',
+    category: 'Recently handed over',
+    badge: 'Recently handed over',
     year: '2025',
     completedYear: '2025',
     occupancyCertificate: '23 April 2022',
@@ -127,8 +127,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     id: 'avania-delivered',
     name: 'Avania',
     location: 'Bandra West',
-    category: 'Recently Delivered',
-    badge: 'Recently Delivered',
+    category: 'Recently handed over',
+    badge: 'Recently handed over',
     year: '2026',
     completedYear: '2026',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85',
@@ -139,8 +139,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     id: 'bel-air',
     name: 'Bel Air',
     location: 'Bandra West',
-    category: 'Recently Delivered',
-    badge: 'Recently Delivered',
+    category: 'Recently handed over',
+    badge: 'Recently handed over',
     year: '2024',
     completedYear: '2024',
     buildingHeight: '14 Storeys',
@@ -150,7 +150,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   },
 
   // ─────────────────────────────────────────────────────────────
-  // 3. ONGOING & UPCOMING
+  // 3. RISING NOW
   // Display:
   // • Seascape
   // • Verano / Montclaire
@@ -160,8 +160,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     id: 'seascape',
     name: 'Seascape',
     location: 'Juhu',
-    category: 'Ongoing & Upcoming',
-    badge: 'Ongoing & Upcoming',
+    category: 'Rising now',
+    badge: 'Rising now',
     externalUrl: 'https://vaswaniseascape.in',
     image: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1779550159/Make_setting_night_time_202605232058_w4cpyk.jpg',
     bedrooms: '4 & 5 BHK Coastal Sky Villas',
@@ -171,8 +171,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     id: 'verano-montclaire',
     name: 'Verano / Montclaire',
     location: 'Bandra West',
-    category: 'Ongoing & Upcoming',
-    badge: 'Ongoing & Upcoming',
+    category: 'Rising now',
+    badge: 'Rising now',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
     bedrooms: '3 & 4 BHK Luxury Residences',
     area: '1,800 - 3,200 Sq. Ft.',
@@ -181,8 +181,8 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     id: 'viona',
     name: 'Viona',
     location: 'Andheri',
-    category: 'Ongoing & Upcoming',
-    badge: 'Ongoing & Upcoming',
+    category: 'Rising now',
+    badge: 'Rising now',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85',
     bedrooms: '2 & 3 BHK Contemporary Homes',
     area: '1,200 - 2,100 Sq. Ft.',
@@ -195,8 +195,8 @@ export const ADDITIONAL_PROJECTS: PortfolioProject[] = [
     id: 'hamara-ghar',
     name: 'Hamara Ghar',
     location: 'Santacruz West',
-    category: 'Completed Portfolio',
-    badge: 'Completed',
+    category: 'Delivered',
+    badge: 'Delivered',
     year: '2005',
     completedYear: '2005',
     configuration: '2 & 3 BHK Premium Residences',
@@ -208,8 +208,8 @@ export const ADDITIONAL_PROJECTS: PortfolioProject[] = [
     id: 'exotica',
     name: 'Exotica',
     location: 'Bandra West',
-    category: 'Completed Portfolio',
-    badge: 'Completed',
+    category: 'Delivered',
+    badge: 'Delivered',
     year: '2012',
     completedYear: '2012',
     configuration: '3 & 4 BHK Luxury Residences',

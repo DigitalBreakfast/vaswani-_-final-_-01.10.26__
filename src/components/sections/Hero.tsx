@@ -184,7 +184,7 @@ export const Hero: React.FC = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      className="relative w-full min-h-screen max-h-[1200px] bg-[#0A2F28] text-white overflow-hidden flex flex-col justify-between pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 px-6 sm:px-10 lg:px-16 select-none"
+      className="relative w-full min-h-screen max-h-[1200px] bg-[#1C443B] text-white overflow-hidden flex flex-col justify-between pt-24 sm:pt-28 md:pt-32 pb-8 sm:pb-10 md:pb-12 px-6 sm:px-10 lg:px-16 select-none"
       aria-label="Vaswani Group Home Showcase"
     >
       {/* ───────────────────────────────────────────────────────────── */}

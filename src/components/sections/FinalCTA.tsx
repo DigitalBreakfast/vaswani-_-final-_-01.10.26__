@@ -38,7 +38,7 @@ export const FinalCTA: React.FC = () => {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#C4A265]" />
           <span className="font-sans text-xs tracking-[0.3em] uppercase text-[#C4A265] font-medium">
-            Begin Your Conversation
+            BEGIN YOUR CONVERSATION
           </span>
         </motion.div>
 
@@ -50,9 +50,9 @@ export const FinalCTA: React.FC = () => {
           transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="font-editorial text-[40px] sm:text-[54px] lg:text-[68px] xl:text-[76px] font-light leading-[1.06] tracking-tight text-white max-w-4xl"
         >
-          Find A Place That{' '}
+          Find the home that{' '}
           <span className="italic font-editorial font-normal text-[#E8D6C5]">
-            Simply Feels Right.
+            simply feels right.
           </span>
         </motion.h2>
 
@@ -62,9 +62,9 @@ export const FinalCTA: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.85, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="font-sans text-base sm:text-lg text-white/70 font-light max-w-xl leading-relaxed"
+          className="font-sans text-base sm:text-lg text-white/80 font-light max-w-2xl leading-relaxed"
         >
-          Schedule a private advisory consultation with our senior partners across Mumbai & Bengaluru.
+          Sit down with one of our senior partners, with no pressure and no pitch. Tell us how you hope to live, and we will show you where that life can begin.
         </motion.p>
 
         {/* CTA Button - Elevated Magnetic Pill */}
@@ -79,10 +79,10 @@ export const FinalCTA: React.FC = () => {
             onClick={openEnquiryDrawer}
             onMouseEnter={() => setCursorVariant('pointer')}
             onMouseLeave={resetCursor}
-            className="group inline-flex items-center gap-3.5 px-9 py-4 rounded-full bg-white text-[#0A2F28] hover:bg-[#FAF8F5] font-sans text-sm sm:text-base tracking-[0.18em] uppercase font-semibold transition-all duration-300 shadow-[0_12px_40px_rgba(0,0,0,0.45)] hover:shadow-[0_18px_50px_rgba(0,0,0,0.6)] hover:-translate-y-1 cursor-pointer"
+            className="group inline-flex items-center gap-3.5 px-9 py-4 rounded-full bg-white text-[#1C443B] hover:bg-[#FAF8F5] font-sans text-sm sm:text-base tracking-[0.18em] uppercase font-semibold transition-all duration-300 shadow-[0_12px_40px_rgba(0,0,0,0.45)] hover:shadow-[0_18px_50px_rgba(0,0,0,0.6)] hover:-translate-y-1 cursor-pointer"
           >
-            <span>Get In Touch</span>
-            <ArrowRight className="w-4 h-4 text-[#0A2F28] transition-transform duration-300 group-hover:translate-x-1" />
+            <span>Request a private consultation</span>
+            <ArrowRight className="w-4 h-4 text-[#1C443B] transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </motion.div>
 

@@ -39,6 +39,11 @@ export const MegaMenu: React.FC = () => {
     setActiveNavId(id);
     toggleMegaMenu();
 
+    if (id === 'enquire' || href === '#enquire') {
+      openEnquiryDrawer();
+      return;
+    }
+
     if (href.includes('#')) {
       const [path, hash] = href.split('#');
       const targetPath = path || '/';
@@ -154,7 +159,7 @@ export const MegaMenu: React.FC = () => {
                           </span>
                           <div className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all ${
                             isHovered || isActive
-                              ? 'border-[#152E28] bg-[#152E28] text-[#FAF8F5]'
+                              ? 'border-[#1C443B] bg-[#1C443B] text-[#FAF8F5]'
                               : 'border-white/10 text-white/40 group-hover:border-white/30 group-hover:text-white'
                           }`}>
                             <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

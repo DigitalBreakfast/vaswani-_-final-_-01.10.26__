@@ -87,22 +87,22 @@ export const CustomCursor: React.FC = () => {
           height: isExplore ? 56 : isViewMode ? 48 : isPlay || isPause ? 40 : isText ? 28 : 36,
           borderRadius: isText ? '2px' : '9999px',
           backgroundColor: isViewMode
-            ? 'rgba(21, 46, 40, 0.94)'
+            ? 'rgba(28, 68, 59, 0.94)'
             : isExplore
-            ? 'rgba(21, 46, 40, 0.94)'
+            ? 'rgba(28, 68, 59, 0.94)'
             : isPlay || isPause
             ? 'rgba(26, 28, 30, 0.92)'
             : isPointer
-            ? 'rgba(21, 46, 40, 0.12)'
+            ? 'rgba(28, 68, 59, 0.12)'
             : isMagnetic
-            ? 'rgba(21, 46, 40, 0.2)'
+            ? 'rgba(28, 68, 59, 0.2)'
             : isText
-            ? 'rgba(21, 46, 40, 0.8)'
+            ? 'rgba(28, 68, 59, 0.8)'
             : 'rgba(26, 28, 30, 0.04)',
           borderColor: isSpecialPill
             ? 'rgba(215, 194, 163, 0.3)'
             : isPointer || isMagnetic
-            ? '#152E28'
+            ? '#1C443B'
             : isText
             ? 'transparent'
             : 'rgba(26, 28, 30, 0.2)',
@@ -141,7 +141,7 @@ export const CustomCursor: React.FC = () => {
         )}
 
         {isDrag && (
-          <ArrowLeftRight className="w-4 h-4 text-[#152E28] animate-pulse" />
+          <ArrowLeftRight className="w-4 h-4 text-[#1C443B] animate-pulse" />
         )}
       </motion.div>
 
@@ -156,7 +156,7 @@ export const CustomCursor: React.FC = () => {
           }}
           animate={{
             scale: isPointer ? 0.5 : isMagnetic ? 0 : 1,
-            backgroundColor: isPointer ? '#152E28' : '#1A1C1E',
+            backgroundColor: isPointer ? '#1C443B' : '#1A1C1E',
           }}
           transition={{ duration: 0.15 }}
           className="w-1.5 h-1.5 rounded-full pointer-events-none fixed top-0 left-0 z-[10000]"

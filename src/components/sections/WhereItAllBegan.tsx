@@ -176,24 +176,18 @@ export const WhereItAllBegan: React.FC = () => {
             </div>
 
             {/* Supporting Copy */}
-            <div className="space-y-6 font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#2C4A40] font-light leading-relaxed max-w-[580px]">
-              {/* Lead Paragraph - Level 03 */}
-              <p className="font-sans text-[20px] md:text-[22px] lg:text-[24px] text-[#135A5C] font-normal leading-[1.5] max-w-[700px]">
-                Vaswani Group was founded by Mr. Ramesh Vaswani and Mr. Maniklal Vaswani.
+            <div className="space-y-6 font-sans text-[17px] sm:text-[18px] text-[#2C4A40] font-light leading-[1.75] max-w-[580px]">
+              <p>
+                In 1985, two men who had spent years beside buyers and developers saw what was missing. Layouts were compared and locations weighed. Yet something always felt unresolved: a detail overlooked, a promise stretched, a compromise quietly accepted.
               </p>
               
               <p>
-                The business began with a commitment to thoughtful development, combining construction expertise, strong partnerships and disciplined execution.
+                That gap stayed with Ramesh and Maniklal Vaswani. They founded the Group to close it.
               </p>
 
               <p>
-                Every decision laid the foundation for a company built on trust.
+                They believed a family does not invest in square footage. A family places its trust in the people behind the building. So they built the company on discipline in planning, clarity in conversation and accountability in everything they delivered.
               </p>
-            </div>
-
-            {/* Timeless Editorial Quote Pull-out - Level 04: Plus Jakarta Sans */}
-            <div className="pt-2 pb-2 pl-5 border-l-2 border-[#1A4E40]/30 italic font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#1A4E40] font-normal leading-relaxed max-w-[540px]">
-              "The right home doesn't need to be sold. It speaks through thoughtful design, uncompromising quality, and every decision made with intention."
             </div>
 
             {/* ========================================================================= */}

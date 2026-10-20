@@ -12,7 +12,7 @@ export const AboutHero: React.FC<AboutHeroProps> = () => {
   return (
     <section
       id="about-hero"
-      className="relative w-full h-screen min-h-[720px] max-h-[1200px] bg-[#FAF8F5] text-[#0A2F28] overflow-hidden flex flex-col justify-between pt-32 sm:pt-36 pb-12 sm:pb-16 px-6 sm:px-10 lg:px-16 select-none"
+      className="relative w-full h-screen min-h-[720px] max-h-[1200px] bg-[#FAF8F5] text-[#1C443B] overflow-hidden flex flex-col justify-between pt-32 sm:pt-36 pb-12 sm:pb-16 px-6 sm:px-10 lg:px-16 select-none"
       aria-label="About Vaswani Hero"
     >
       {/* ───────────────────────────────────────────────────────────── */}
@@ -71,10 +71,10 @@ export const AboutHero: React.FC<AboutHeroProps> = () => {
             transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-2 inline-block"
           >
-            <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-[0.25em] uppercase text-[#0A2F28]/80 font-semibold block">
+            <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-[0.25em] uppercase text-[#1C443B]/80 font-semibold block">
               ABOUT VASWANI
             </span>
-            <div className="w-10 h-[1.5px] bg-[#0A2F28]/50" />
+            <div className="w-10 h-[1.5px] bg-[#1C443B]/50" />
           </motion.div>
 
           {/* Page Hero Title - Level 01: Cormorant Garamond 88px desktop, 72px tablet, 52px mobile */}
@@ -82,7 +82,7 @@ export const AboutHero: React.FC<AboutHeroProps> = () => {
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="font-editorial text-[52px] md:text-[72px] lg:text-[88px] font-light leading-[1.02] tracking-tight text-[#0A2F28]"
+            className="font-editorial text-[52px] md:text-[72px] lg:text-[88px] font-light leading-[1.02] tracking-tight text-[#1C443B]"
           >
             <span className="block">Building Places That</span>
             <span className="block mt-1 sm:mt-2">
@@ -98,13 +98,13 @@ export const AboutHero: React.FC<AboutHeroProps> = () => {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-4 font-sans text-[20px] md:text-[22px] lg:text-[24px] text-[#0A2F28]/85 font-normal leading-[1.5] max-w-[700px]"
+            className="space-y-5 font-sans text-[20px] md:text-[22px] lg:text-[24px] text-[#1C443B]/85 font-normal leading-[1.55] max-w-[720px]"
           >
             <p>
-              For over four decades, we've believed that the right home doesn't need to be sold. It speaks through thoughtful design, uncompromising quality, and every decision made with intention.
+              Some homes impress you at the door. Others settle around you, slowly, until you cannot imagine living anywhere else. We have spent four decades building the second kind.
             </p>
-            <p className="text-[#0A2F28]/75 pt-1">
-              From the first conversation to the moment the keys are handed over, every experience is designed to feel effortless, considered, and simply right.
+            <p className="text-[#1C443B]/75 pt-1">
+              From the first conversation to the day the keys change hands, every step is shaped to feel unhurried, considered and entirely your own.
             </p>
           </motion.div>
 

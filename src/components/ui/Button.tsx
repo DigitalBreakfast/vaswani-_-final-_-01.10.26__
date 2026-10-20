@@ -79,22 +79,22 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     }[size];
 
     const baseShared =
-      'relative inline-flex items-center justify-center font-sans uppercase font-semibold select-none outline-none transition-all duration-300 disabled:opacity-40 disabled:pointer-events-none focus-visible:ring-2 focus-visible:ring-[#152E28] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF8F5] cursor-pointer';
+      'relative inline-flex items-center justify-center font-sans uppercase font-semibold select-none outline-none transition-all duration-300 disabled:opacity-40 disabled:pointer-events-none focus-visible:ring-2 focus-visible:ring-[#1C443B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF8F5] cursor-pointer';
 
-    // 1. Primary: Solid #152E28 background
-    const primaryStyle = `rounded-full bg-[#152E28] hover:bg-[#1C3D35] active:bg-[#0E201C] text-[#FAF8F5] border border-[#234A41]/50 shadow-md shadow-[#0E201C]/25 group overflow-hidden ${sizeClasses}`;
+    // 1. Primary: Solid #1C443B background
+    const primaryStyle = `rounded-full bg-[#1C443B] hover:bg-[#1C3D35] active:bg-[#0E201C] text-[#FAF8F5] border border-[#234A41]/50 shadow-md shadow-[#0E201C]/25 group overflow-hidden ${sizeClasses}`;
 
     // 2. Secondary: Minimal outline
-    const secondaryStyle = `rounded-full bg-[#1A1C1E]/[0.03] hover:bg-[#1A1C1E]/[0.08] active:bg-[#1A1C1E]/[0.12] text-[#1A1C1E] border border-[#1A1C1E]/15 hover:border-[#152E28]/40 backdrop-blur-sm group overflow-hidden ${sizeClasses}`;
+    const secondaryStyle = `rounded-full bg-[#1A1C1E]/[0.03] hover:bg-[#1A1C1E]/[0.08] active:bg-[#1A1C1E]/[0.12] text-[#1A1C1E] border border-[#1A1C1E]/15 hover:border-[#1C443B]/40 backdrop-blur-sm group overflow-hidden ${sizeClasses}`;
 
     // 3. Text Button: No border, animated underline, arrow movement, editorial style
-    const textStyle = `bg-transparent hover:text-[#152E28] active:text-[#0E201C] text-[#1A1C1E] p-0 border-b-2 border-transparent hover:border-[#152E28] rounded-none group tracking-wide gap-2 text-[16px] md:text-[17px] lg:text-[18px]`;
+    const textStyle = `bg-transparent hover:text-[#1C443B] active:text-[#0E201C] text-[#1A1C1E] p-0 border-b-2 border-transparent hover:border-[#1C443B] rounded-none group tracking-wide gap-2 text-[16px] md:text-[17px] lg:text-[18px]`;
 
     // 4. Icon Button: Circular with glass, solid, and outline variants
     const iconLooks = {
-      solid: 'bg-[#152E28] text-[#FAF8F5] hover:bg-[#1C3D35] border border-[#234A41]/50 shadow-sm',
-      glass: 'bg-white/70 hover:bg-white text-[#1A1C1E] hover:text-[#152E28] border border-white/40 backdrop-blur-md shadow-sm',
-      outline: 'bg-transparent hover:bg-[#152E28] text-[#1A1C1E] hover:text-[#FAF8F5] border border-[#1A1C1E]/20 hover:border-[#152E28]',
+      solid: 'bg-[#1C443B] text-[#FAF8F5] hover:bg-[#1C3D35] border border-[#234A41]/50 shadow-sm',
+      glass: 'bg-white/70 hover:bg-white text-[#1A1C1E] hover:text-[#1C443B] border border-white/40 backdrop-blur-md shadow-sm',
+      outline: 'bg-transparent hover:bg-[#1C443B] text-[#1A1C1E] hover:text-[#FAF8F5] border border-[#1A1C1E]/20 hover:border-[#1C443B]',
     }[iconLook];
 
     const iconStyle = `rounded-full ${iconLooks} flex items-center justify-center transition-all ${iconSizeClasses}`;
@@ -119,7 +119,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         onMouseMove={magnetic && !prefersReduced ? handleMouseMove : undefined}
         onMouseEnter={handleHoverStart}
         onMouseLeave={handleHoverEnd}
-        className={`${baseShared} ${variantStyles} ${glow ? 'shadow-[0_0_25px_rgba(21,46,40,0.4)]' : ''} ${className}`}
+        className={`${baseShared} ${variantStyles} ${glow ? 'shadow-[0_0_25px_rgba(28, 68, 59,0.4)]' : ''} ${className}`}
         {...(props as any)}
       >
         {/* Subtle light sweep on primary & secondary hover */}

@@ -14,7 +14,7 @@ export const Portfolio: React.FC = () => {
   const navigate = useNavigate();
 
   const [activeTab, setActiveTab] =
-    useState<PortfolioCategory>('Completed Portfolio');
+    useState<PortfolioCategory>('Delivered');
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -24,9 +24,9 @@ export const Portfolio: React.FC = () => {
   const dragDistanceRef = useRef<number>(0);
 
   const TABS: PortfolioCategory[] = [
-    'Completed Portfolio',
-    'Recently Delivered',
-    'Ongoing & Upcoming',
+    'Delivered',
+    'Recently handed over',
+    'Rising now',
   ];
 
   const displayedProjects = PORTFOLIO_PROJECTS.filter(
@@ -160,7 +160,7 @@ export const Portfolio: React.FC = () => {
   return (
     <section
       id="portfolio"
-      className="relative w-full bg-[#FAF8F5] text-[#0A2F28] pt-28 pb-32 sm:pt-36 sm:pb-40 lg:pt-44 lg:pb-48 select-none overflow-hidden"
+      className="relative w-full bg-[#FAF8F5] text-[#1C443B] pt-28 pb-32 sm:pt-36 sm:pb-40 lg:pt-44 lg:pb-48 select-none overflow-hidden"
       aria-label="Our Portfolio — Architectural Body of Work"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
@@ -180,11 +180,14 @@ export const Portfolio: React.FC = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-[820px] mb-8 sm:mb-10 space-y-3"
         >
-          <h2 className="font-editorial text-[42px] sm:text-[54px] lg:text-[68px] font-light leading-[1.05] text-[#152E28] tracking-tight">
+          <span className="font-sans text-[13px] sm:text-[14px] tracking-[0.25em] uppercase text-[#1C443B]/70 font-semibold block">
             OUR PORTFOLIO
+          </span>
+          <h2 className="font-editorial text-[42px] sm:text-[54px] lg:text-[68px] font-light leading-[1.05] text-[#1C443B] tracking-tight">
+            Homes that kept their promise.
           </h2>
-          <p className="font-sans text-[16px] sm:text-[18px] text-[#152E28]/80 font-normal leading-relaxed pt-1">
-            Explore a carefully curated collection of current developments, recently delivered residences and landmark projects that have shaped the Vaswani legacy over four decades.
+          <p className="font-sans text-[16px] sm:text-[18px] text-[#1C443B]/80 font-normal leading-relaxed pt-1">
+            Residences of quiet distinction, each one built to be lived in and loved for a lifetime.
           </p>
         </motion.div>
 
@@ -194,7 +197,7 @@ export const Portfolio: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.85, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-4 border-b border-[#152E28]/10"
+          className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-4 border-b border-[#1C443B]/10"
         >
           {/* Category Pill Navigation */}
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 self-start md:self-center">
@@ -208,8 +211,8 @@ export const Portfolio: React.FC = () => {
                   onMouseLeave={resetCursor}
                   className={`relative px-5 sm:px-6 py-2.5 rounded-full font-sans text-[13px] sm:text-[14px] md:text-[15px] tracking-wider uppercase font-medium transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? 'bg-[#152E28] text-[#d7c2a3] shadow-md border border-[#152E28]'
-                      : 'text-[#152E28]/75 hover:text-[#152E28] hover:bg-[#152E28]/5 border border-[#152E28]/20 bg-transparent'
+                      ? 'bg-[#1C443B] text-[#d7c2a3] shadow-md border border-[#1C443B]'
+                      : 'text-[#1C443B]/75 hover:text-[#1C443B] hover:bg-[#1C443B]/5 border border-[#1C443B]/20 bg-transparent'
                   }`}
                 >
                   {tab}
@@ -224,11 +227,11 @@ export const Portfolio: React.FC = () => {
               onClick={() => navigate('/products')}
               onMouseEnter={() => setCursorVariant('pointer')}
               onMouseLeave={resetCursor}
-              className="group inline-flex items-center gap-3 text-[14px] sm:text-[15px] md:text-[16px] font-sans tracking-wide uppercase text-[#152E28] hover:text-[#152E28]/75 font-medium transition-colors duration-300 cursor-pointer pb-1 relative"
+              className="group inline-flex items-center gap-3 text-[14px] sm:text-[15px] md:text-[16px] font-sans tracking-wide uppercase text-[#1C443B] hover:text-[#1C443B]/75 font-medium transition-colors duration-300 cursor-pointer pb-1 relative"
             >
               <span>View All Projects</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-1.5" />
-              <span className="absolute left-0 bottom-0 w-0 h-[1.5px] bg-[#152E28] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute left-0 bottom-0 w-0 h-[1.5px] bg-[#1C443B] transition-all duration-300 group-hover:w-full" />
             </button>
           </div>
         </motion.div>
@@ -274,7 +277,7 @@ export const Portfolio: React.FC = () => {
                 onClick={() => handleCardClick(project)}
                 onMouseEnter={() => setCursorVariant('explore', project.name)}
                 onMouseLeave={resetCursor}
-                className="group relative shrink-0 snap-start snap-always w-[78vw] sm:w-[52vw] md:w-[42vw] lg:w-[380px] xl:w-[420px] aspect-[4/5] sm:aspect-[3/4] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-[#152E28] shadow-[0_16px_45px_rgba(10,47,40,0.08)] hover:shadow-[0_28px_65px_rgba(10,47,40,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-2 hover:-translate-y-2 cursor-pointer"
+                className="group relative shrink-0 snap-start snap-always w-[78vw] sm:w-[52vw] md:w-[42vw] lg:w-[380px] xl:w-[420px] aspect-[4/5] sm:aspect-[3/4] rounded-[24px] sm:rounded-[28px] overflow-hidden bg-[#1C443B] shadow-[0_16px_45px_rgba(28, 68, 59,0.08)] hover:shadow-[0_28px_65px_rgba(28, 68, 59,0.22)] transition-all duration-500 ease-out group-hover:-translate-y-2 hover:-translate-y-2 cursor-pointer"
               >
                 {/* Architectural Photography with Subtle Zoom on Hover */}
                 <img
@@ -305,19 +308,19 @@ export const Portfolio: React.FC = () => {
                 {/* Bottom Editorial Content */}
                 <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7 lg:p-8 z-10 flex flex-col justify-end">
                   {/* Category-Specific Meta Line */}
-                  {project.category === 'Ongoing & Upcoming' && (
+                  {project.category === 'Rising now' && (
                     <span className="font-sans text-[12px] sm:text-[13px] tracking-[0.22em] uppercase text-[#d7c2a3] font-medium block mb-1.5">
                       {project.location}
                     </span>
                   )}
 
-                  {project.category === 'Recently Delivered' && (
+                  {project.category === 'Recently handed over' && (
                     <span className="font-sans text-[12px] sm:text-[13px] tracking-[0.22em] uppercase text-[#d7c2a3] font-medium block mb-1.5">
                       Year Delivered: {project.year}
                     </span>
                   )}
 
-                  {project.category === 'Completed Portfolio' && (
+                  {project.category === 'Delivered' && (
                     <span className="font-sans text-[12px] sm:text-[13px] tracking-[0.22em] uppercase text-[#d7c2a3] font-medium block mb-1.5">
                       Completion Year: {project.year}
                     </span>
@@ -356,7 +359,7 @@ export const Portfolio: React.FC = () => {
           aria-label="Previous project"
           onMouseEnter={() => setCursorVariant('pointer')}
           onMouseLeave={resetCursor}
-          className="pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FAF8F5]/85 hover:bg-[#FAF8F5] text-[#152E28]/70 hover:text-[#152E28] backdrop-blur-md border border-[#152E28]/15 hover:border-[#152E28]/35 shadow-[0_4px_16px_rgba(21,46,40,0.08)] flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 group/arrow"
+          className="pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FAF8F5]/85 hover:bg-[#FAF8F5] text-[#1C443B]/70 hover:text-[#1C443B] backdrop-blur-md border border-[#1C443B]/15 hover:border-[#1C443B]/35 shadow-[0_4px_16px_rgba(28, 68, 59,0.08)] flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 group/arrow"
         >
           <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.25] transition-transform duration-300 group-hover/arrow:-translate-x-0.5" />
         </button>
@@ -366,7 +369,7 @@ export const Portfolio: React.FC = () => {
           aria-label="Next project"
           onMouseEnter={() => setCursorVariant('pointer')}
           onMouseLeave={resetCursor}
-          className="pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FAF8F5]/85 hover:bg-[#FAF8F5] text-[#152E28]/70 hover:text-[#152E28] backdrop-blur-md border border-[#152E28]/15 hover:border-[#152E28]/35 shadow-[0_4px_16px_rgba(21,46,40,0.08)] flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 group/arrow"
+          className="pointer-events-auto w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FAF8F5]/85 hover:bg-[#FAF8F5] text-[#1C443B]/70 hover:text-[#1C443B] backdrop-blur-md border border-[#1C443B]/15 hover:border-[#1C443B]/35 shadow-[0_4px_16px_rgba(28, 68, 59,0.08)] flex items-center justify-center transition-all duration-300 cursor-pointer active:scale-95 group/arrow"
         >
           <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.25] transition-transform duration-300 group-hover/arrow:translate-x-0.5" />
         </button>

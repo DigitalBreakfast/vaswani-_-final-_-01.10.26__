@@ -139,11 +139,11 @@ export const FeaturedDevelopment: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full sm:w-auto lg:min-w-[400px] max-w-[460px] rounded-[24px] bg-[#d7c2a3] border border-[#d7c2a3] p-6 sm:p-7 text-[#0A2F28] shadow-[0_20px_50px_rgba(0,0,0,0.35)] space-y-4"
+                className="w-full sm:w-auto lg:min-w-[400px] max-w-[460px] rounded-[24px] bg-[#d7c2a3] border border-[#d7c2a3] p-6 sm:p-7 text-[#1C443B] shadow-[0_20px_50px_rgba(0,0,0,0.35)] space-y-4"
               >
                 {/* Panel Header - Level 04 */}
-                <div className="border-b border-[#0A2F28]/15 pb-3.5">
-                  <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-[0.2em] uppercase text-[#0A2F28] font-bold block">
+                <div className="border-b border-[#1C443B]/15 pb-3.5">
+                  <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-[0.2em] uppercase text-[#1C443B] font-bold block">
                     FLAGSHIP COASTAL RESIDENCES
                   </span>
                 </div>
@@ -153,12 +153,12 @@ export const FeaturedDevelopment: React.FC = () => {
                   
                   {/* 4 Bedroom */}
                   <div className="flex items-start gap-2.5">
-                    <Bed className="w-5 h-5 text-[#0A2F28] shrink-0 mt-0.5" />
+                    <Bed className="w-5 h-5 text-[#1C443B] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase text-[#0A2F28]/70 font-medium block">
+                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase text-[#1C443B]/70 font-medium block">
                         RESIDENCES
                       </span>
-                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28] font-semibold">
+                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#1C443B] font-semibold">
                         4 Bedroom
                       </span>
                     </div>
@@ -166,12 +166,12 @@ export const FeaturedDevelopment: React.FC = () => {
 
                   {/* Carpet Area */}
                   <div className="flex items-start gap-2.5">
-                    <Maximize2 className="w-5 h-5 text-[#0A2F28] shrink-0 mt-0.5" />
+                    <Maximize2 className="w-5 h-5 text-[#1C443B] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase text-[#0A2F28]/70 font-medium block">
+                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase text-[#1C443B]/70 font-medium block">
                         CARPET AREA
                       </span>
-                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28] font-semibold whitespace-nowrap">
+                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#1C443B] font-semibold whitespace-nowrap">
                         2069 – 2422 sqft
                       </span>
                     </div>
@@ -179,12 +179,12 @@ export const FeaturedDevelopment: React.FC = () => {
 
                   {/* Rooftop Bar */}
                   <div className="flex items-start gap-2.5">
-                    <Wine className="w-5 h-5 text-[#0A2F28] shrink-0 mt-0.5" />
+                    <Wine className="w-5 h-5 text-[#1C443B] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase text-[#0A2F28]/70 font-medium block">
+                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase text-[#1C443B]/70 font-medium block">
                         EXPERIENCE
                       </span>
-                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28] font-semibold">
+                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#1C443B] font-semibold">
                         Rooftop Bar
                       </span>
                     </div>
@@ -192,12 +192,12 @@ export const FeaturedDevelopment: React.FC = () => {
 
                   {/* Swimming Pool */}
                   <div className="flex items-start gap-2.5">
-                    <Waves className="w-5 h-5 text-[#0A2F28] shrink-0 mt-0.5" />
+                    <Waves className="w-5 h-5 text-[#1C443B] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase text-[#0A2F28]/70 font-medium block">
+                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase text-[#1C443B]/70 font-medium block">
                         AMENITY
                       </span>
-                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#0A2F28] font-semibold">
+                      <span className="font-sans text-[16px] md:text-[17px] lg:text-[18px] text-[#1C443B] font-semibold">
                         Swimming Pool
                       </span>
                     </div>

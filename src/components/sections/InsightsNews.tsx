@@ -110,7 +110,7 @@ export const InsightsNews: React.FC = () => {
 
                 {/* Headline & Excerpt */}
                 <div className="space-y-2">
-                  <h3 className="font-editorial text-[20px] sm:text-[22px] lg:text-[24px] text-[#135A5C] font-normal leading-[1.25] tracking-tight group-hover:text-[#0A2F28] transition-colors">
+                  <h3 className="font-editorial text-[20px] sm:text-[22px] lg:text-[24px] text-[#135A5C] font-normal leading-[1.25] tracking-tight group-hover:text-[#1C443B] transition-colors">
                     {article.title}
                   </h3>
 
@@ -161,7 +161,7 @@ export const InsightsNews: React.FC = () => {
               </button>
 
               <div className="space-y-2">
-                <span className="font-sans text-[13px] md:text-[14px] tracking-wide uppercase text-[#152E28] font-semibold">
+                <span className="font-sans text-[13px] md:text-[14px] tracking-wide uppercase text-[#1C443B] font-semibold">
                   {selectedArticle.category} • {selectedArticle.readTime}
                 </span>
                 <h3 className="font-editorial text-[26px] md:text-[32px] lg:text-[36px] text-[#135A5C] leading-[1.15] tracking-tight font-light">
@@ -186,7 +186,7 @@ export const InsightsNews: React.FC = () => {
               <div className="pt-4 border-t border-[#135A5C]/10 flex justify-end">
                 <button
                   onClick={() => setSelectedArticle(null)}
-                  className="px-7 py-3 rounded-full bg-[#152E28] text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase cursor-pointer hover:bg-[#1C3D35] transition-colors"
+                  className="px-7 py-3 rounded-full bg-[#1C443B] text-white font-sans text-[16px] md:text-[17px] lg:text-[18px] tracking-wide uppercase cursor-pointer hover:bg-[#1C3D35] transition-colors"
                 >
                   Close Story
                 </button>

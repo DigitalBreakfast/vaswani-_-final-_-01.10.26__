@@ -91,11 +91,27 @@ export const VideoTestimonials: React.FC = () => {
   return (
     <section
       id="video-testimonials"
-      className="relative w-full bg-[#0B1E1A] text-white py-28 sm:py-36 lg:py-44 select-none overflow-hidden"
+      className="relative w-full bg-[#1C443B] text-white py-28 sm:py-36 lg:py-44 select-none overflow-hidden"
       aria-label="Homeowner Video Testimonials"
     >
+      {/* Subtle architectural texture overlay matching footer */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.025] pointer-events-none mix-blend-overlay"
+        aria-hidden="true"
+      >
+        <filter id="vaswani-video-texture">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.85"
+            numOctaves="3"
+            stitchTiles="stitch"
+          />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#vaswani-video-texture)" />
+      </svg>
+
       {/* Subtle ambient glow in background */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#135A5C]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
@@ -231,7 +247,7 @@ export const VideoTestimonials: React.FC = () => {
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl bg-[#152E28] rounded-[24px] overflow-hidden border border-white/20 shadow-2xl"
+              className="relative w-full max-w-4xl bg-[#1C443B] rounded-[24px] overflow-hidden border border-white/20 shadow-2xl"
             >
               {/* Modal Top Bar */}
               <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-black/30">

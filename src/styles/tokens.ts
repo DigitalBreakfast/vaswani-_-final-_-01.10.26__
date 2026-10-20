@@ -52,7 +52,7 @@ export const TOKENS = {
     seaGreen: {
       950: '#0B2219',          // Deep Pine Shadow
       900: '#143C2E',          // Deep Sea Pine
-      800: '#152E28',          // Primary Brand Button Accent & Active State
+      800: '#1C443B',          // Primary Brand Button Accent & Active State
       700: '#1C3D35',          // Brand Accent Hover
       600: '#234A41',          // Rich Sea Green
       500: '#35936F',          // Vibrant Jade Accent
@@ -98,7 +98,7 @@ export const TOKENS = {
       footer: '#1A1C1E',
       formInput: '#FFFFFF',
       formBorder: '#DCD7CA',
-      formFocus: '#152E28',
+      formFocus: '#1C443B',
       modalLight: '#FAF8F5',
       modalDark: '#1A1C1E',
     },
