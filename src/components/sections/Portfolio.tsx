@@ -152,6 +152,8 @@ export const Portfolio: React.FC = () => {
     if (dragDistanceRef.current > 8) return;
     if (project.externalUrl) {
       window.open(project.externalUrl, '_blank', 'noopener,noreferrer');
+    } else if (project.category === 'Recently handed over') {
+      navigate(`/projects/${project.id}`);
     } else {
       navigate(`/products?project=${project.id}`);
     }

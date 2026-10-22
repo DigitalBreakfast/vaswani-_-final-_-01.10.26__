@@ -64,90 +64,7 @@ const modalDetails: Record<'swes' | 'sparsh', FeatureModalData> = {
   },
 };
 
-/* ========================================================================= */
-/* BESPOKE SPARSH LOGO COMPONENT                                             */
-/* ========================================================================= */
-const SparshLogoMark: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size = 'md' }) => {
-  const dim = size === 'lg' ? 'w-24 h-24' : size === 'sm' ? 'w-12 h-12' : 'w-20 h-20';
-  return (
-    <div className="flex flex-col items-center justify-center text-center">
-      <svg
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className={`${dim} transition-transform duration-500`}
-        aria-label="Sparsh Clean Water Initiative Logo"
-      >
-        <circle cx="50" cy="50" r="46" stroke="#8E6B47" strokeWidth="1.2" strokeOpacity="0.35" strokeDasharray="3 3" />
-        <circle cx="50" cy="50" r="41" stroke="#1C443B" strokeWidth="1.2" strokeOpacity="0.25" />
-        <ellipse cx="50" cy="64" rx="22" ry="6.5" stroke="#8E6B47" strokeWidth="1.2" strokeOpacity="0.45" />
-        <ellipse cx="50" cy="70" rx="30" ry="8" stroke="#1C443B" strokeWidth="1" strokeOpacity="0.25" />
-        <path
-          d="M50 18C50 18 35 38 35 52C35 60.2843 41.7157 67 50 67C58.2843 67 65 60.2843 65 52C65 38 50 18 50 18Z"
-          fill="url(#sparshGrad)"
-          stroke="#1C443B"
-          strokeWidth="1.2"
-        />
-        <path
-          d="M43 46C43 38 48 29 48 29"
-          stroke="white"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeOpacity="0.75"
-        />
-        <path
-          d="M38 60C41 55 46 54 50 54C54 54 59 55 62 60"
-          stroke="#FAF8F5"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-        />
-        <defs>
-          <linearGradient id="sparshGrad" x1="50" y1="18" x2="50" y2="67" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#8E6B47" />
-            <stop offset="65%" stopColor="#1C443B" />
-            <stop offset="100%" stopColor="#14332C" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <div className="mt-2.5">
-        <span className="font-editorial text-[20px] sm:text-[22px] tracking-[0.22em] uppercase font-light text-[#1C443B] block leading-none">
-          SPARSH
-        </span>
-        <span className="font-sans text-[10px] sm:text-[11px] tracking-[0.26em] uppercase text-[#8E6B47] font-semibold block mt-1">
-          CLEAN WATER INITIATIVE
-        </span>
-      </div>
-    </div>
-  );
-};
 
-/* ========================================================================= */
-/* SWES LOGO COMPONENT                                                       */
-/* ========================================================================= */
-const SwesLogoMark: React.FC<{ size?: 'sm' | 'md' | 'lg' }> = ({ size = 'md' }) => {
-  const imgBox = size === 'lg' ? 'w-24 h-24' : size === 'sm' ? 'w-12 h-12' : 'w-20 h-20';
-  return (
-    <div className="flex flex-col items-center justify-center text-center">
-      <div className={`${imgBox} rounded-xl bg-white shadow-xs border border-[#1C443B]/10 p-2 flex items-center justify-center transition-transform duration-500`}>
-        <img
-          src="https://res.cloudinary.com/ds5s7shuo/image/upload/v1790339685/SWES_bpzahd.jpg"
-          alt="Santacruz West Education Society (SWES) Logo"
-          className="max-h-full max-w-full object-contain"
-          loading="lazy"
-          referrerPolicy="no-referrer"
-        />
-      </div>
-      <div className="mt-2.5">
-        <span className="font-editorial text-[20px] sm:text-[22px] tracking-[0.22em] uppercase font-light text-[#1C443B] block leading-none">
-          SWES
-        </span>
-        <span className="font-sans text-[10px] sm:text-[11px] tracking-[0.26em] uppercase text-[#8E6B47] font-semibold block mt-1">
-          SANTACRUZ WEST EDUCATION SOCIETY
-        </span>
-      </div>
-    </div>
-  );
-};
 
 export const BuildingBeyond: React.FC = () => {
   const { setCursorVariant, resetCursor } = useCursor();
@@ -225,26 +142,26 @@ export const BuildingBeyond: React.FC = () => {
             onMouseLeave={resetCursor}
             className="group relative rounded-2xl bg-white border border-[#1C443B]/10 hover:border-[#8E6B47]/40 shadow-xs hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col cursor-pointer hover:-translate-y-1"
           >
-            {/* Visual / Logo Showcase */}
-            <div className="relative h-64 sm:h-72 overflow-hidden bg-gradient-to-b from-[#F7F4EF] via-[#FAF8F5] to-white border-b border-[#1C443B]/10 flex flex-col items-center justify-center p-6 text-center">
-              {/* Subtle architectural background texture & lines */}
-              <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#8E6B47_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+            {/* Visual / Banner Image Showcase */}
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#FAF8F5] border-b border-[#1C443B]/10">
+              <img
+                src="https://res.cloudinary.com/ds5s7shuo/image/upload/v1790339685/SWES_bpzahd.jpg"
+                alt="SWES Partnership — Santacruz West Education Society"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/15 pointer-events-none" />
 
               {/* Top Bar with Badge & Action Arrow */}
               <div className="absolute top-4 inset-x-4 sm:inset-x-5 flex items-center justify-between z-10 pointer-events-none">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#1C443B]/15 text-[#1C443B] font-sans text-[12px] sm:text-[13px] tracking-wider uppercase font-semibold shadow-xs">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-white/50 text-[#1C443B] font-sans text-[12px] sm:text-[13px] tracking-wider uppercase font-semibold shadow-xs">
                   <GraduationCap className="w-3.5 h-3.5 text-[#8E6B47]" />
                   SWES PARTNERSHIP
                 </span>
 
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-[#1C443B]/15 text-[#1C443B] flex items-center justify-center group-hover:bg-[#1C443B] group-hover:text-white group-hover:border-[#1C443B] transition-all duration-300 shadow-xs">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/95 backdrop-blur-md border border-white/50 text-[#1C443B] flex items-center justify-center group-hover:bg-[#1C443B] group-hover:text-white group-hover:border-[#1C443B] transition-all duration-300 shadow-xs">
                   <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
-              </div>
-
-              {/* Logo Presentation */}
-              <div className="relative z-10 pt-4 group-hover:scale-105 transition-transform duration-500 ease-out">
-                <SwesLogoMark size="md" />
               </div>
             </div>
 
@@ -284,26 +201,26 @@ export const BuildingBeyond: React.FC = () => {
             onMouseLeave={resetCursor}
             className="group relative rounded-2xl bg-white border border-[#1C443B]/10 hover:border-[#8E6B47]/40 shadow-xs hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col cursor-pointer hover:-translate-y-1"
           >
-            {/* Visual / Logo Showcase */}
-            <div className="relative h-64 sm:h-72 overflow-hidden bg-gradient-to-b from-[#F7F4EF] via-[#FAF8F5] to-white border-b border-[#1C443B]/10 flex flex-col items-center justify-center p-6 text-center">
-              {/* Subtle architectural background texture & lines */}
-              <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#8E6B47_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+            {/* Visual / Banner Image Showcase */}
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#FAF8F5] border-b border-[#1C443B]/10">
+              <img
+                src="https://res.cloudinary.com/ds5s7shuo/image/upload/v1790339685/Sparsh_kivdt3.jpg"
+                alt="Sparsh Initiative — Clean water, for every family"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/15 pointer-events-none" />
 
               {/* Top Bar with Badge & Action Arrow */}
               <div className="absolute top-4 inset-x-4 sm:inset-x-5 flex items-center justify-between z-10 pointer-events-none">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-[#1C443B]/15 text-[#1C443B] font-sans text-[12px] sm:text-[13px] tracking-wider uppercase font-semibold shadow-xs">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-white/50 text-[#1C443B] font-sans text-[12px] sm:text-[13px] tracking-wider uppercase font-semibold shadow-xs">
                   <Droplets className="w-3.5 h-3.5 text-[#8E6B47]" />
                   SPARSH INITIATIVE
                 </span>
 
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border border-[#1C443B]/15 text-[#1C443B] flex items-center justify-center group-hover:bg-[#1C443B] group-hover:text-white group-hover:border-[#1C443B] transition-all duration-300 shadow-xs">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/95 backdrop-blur-md border border-white/50 text-[#1C443B] flex items-center justify-center group-hover:bg-[#1C443B] group-hover:text-white group-hover:border-[#1C443B] transition-all duration-300 shadow-xs">
                   <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
-              </div>
-
-              {/* Logo Presentation */}
-              <div className="relative z-10 pt-4 group-hover:scale-105 transition-transform duration-500 ease-out">
-                <SparshLogoMark size="md" />
               </div>
             </div>
 
@@ -372,13 +289,17 @@ export const BuildingBeyond: React.FC = () => {
                 </h3>
               </div>
 
-              {/* Logo & Emblem Hero Area */}
-              <div className="w-full py-8 sm:py-10 px-6 rounded-xl bg-white border border-[#1C443B]/10 mb-6 flex items-center justify-center shadow-xs">
-                {modalDetails[activeModal].type === 'swes' ? (
-                  <SwesLogoMark size="lg" />
-                ) : (
-                  <SparshLogoMark size="lg" />
-                )}
+              {/* Visual Banner Image */}
+              <div className="w-full aspect-[16/9] rounded-xl overflow-hidden bg-white border border-[#1C443B]/10 mb-6 shadow-xs">
+                <img
+                  src={
+                    modalDetails[activeModal].type === 'swes'
+                      ? 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1790339685/SWES_bpzahd.jpg'
+                      : 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1790339685/Sparsh_kivdt3.jpg'
+                  }
+                  alt={modalDetails[activeModal].title}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Metric Highlights */}

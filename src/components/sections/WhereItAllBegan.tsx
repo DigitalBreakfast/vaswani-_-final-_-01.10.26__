@@ -5,16 +5,12 @@ import { useCursor } from '../../context/CursorContext';
 
 const FOUNDER_IMAGES = [
   {
-    src: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1790293181/ecb4a660-9696-4569-bc46-24b8679481b4.png',
+    src: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1790292774/Founder_vaswani_dxd4ad.png',
     alt: 'Mr. Ramesh Vaswani & Mr. Maniklal Vaswani — Founders of Vaswani Group',
   },
   {
-    src: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1790292774/Founder_vaswani_dxd4ad.png',
-    alt: 'Founders & Leadership — Vaswani Group',
-  },
-  {
-    src: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1790293224/0ca385fc-c755-43bc-8cb5-f5b9ecc9bbe2.png',
-    alt: 'Heritage and Leadership — Vaswani Group',
+    src: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1790293181/ecb4a660-9696-4569-bc46-24b8679481b4.png',
+    alt: 'Heritage and Founders — Vaswani Group',
   },
 ];
 
@@ -85,6 +81,10 @@ export const WhereItAllBegan: React.FC = () => {
                     scale: idx === currentImageIndex ? 1 : 1.05,
                   }}
                   transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    zIndex: idx === currentImageIndex ? 5 : 1,
+                    pointerEvents: idx === currentImageIndex ? 'auto' : 'none',
+                  }}
                   className="absolute inset-0 w-full h-full object-cover object-center contrast-[1.02] brightness-[0.98]"
                   loading={idx === 0 ? 'eager' : 'lazy'}
                 />

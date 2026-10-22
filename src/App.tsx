@@ -23,6 +23,7 @@ import { AmbientParticles } from './components/ui/AmbientParticles';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ProductsPage } from './pages/ProductsPage';
+import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { PartnerPage } from './pages/PartnerPage';
 import { ContactPage } from './pages/ContactPage';
 
@@ -72,6 +73,8 @@ const AppLayout: React.FC = () => {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/projects" element={<ProductsPage />} />
+              <Route path="/projects/:id" element={<ProjectDetailPage />} />
+              <Route path="/project/:id" element={<ProjectDetailPage />} />
               <Route path="/insights" element={<HomePage />} />
               <Route path="/partner" element={<PartnerPage />} />
               <Route path="/contact" element={<ContactPage />} />

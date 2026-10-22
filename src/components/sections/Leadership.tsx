@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, ArrowUp, Briefcase, Compass } from 'lucide-react';
+import { ArrowRight, ArrowUp, Briefcase, Compass, Maximize2, X } from 'lucide-react';
 import { useCursor } from '../../context/CursorContext';
 
 interface LeaderProfile {
@@ -34,7 +34,7 @@ const LEADERS: LeaderProfile[] = [
       'The relationships we build with homeowners, partners and communities continue to shape our journey. Their trust inspires us to uphold the values of integrity, quality and long-term thinking in everything we do.',
       'For us, success is measured not only by the developments we create, but by the lasting trust we earn and the lives we help enrich. It is this belief that continues to guide Vaswani as we look towards the future.',
     ],
-    image: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1788387227/Screenshot_2026-09-03_at_3.43.27_AM_cyw8ft.png',
+    image: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1792681337/DSC01005_ccqabx.jpg',
     altText: 'Karan Vaswani — Managing Director, Vaswani Group',
   },
   {
@@ -53,7 +53,7 @@ const LEADERS: LeaderProfile[] = [
       'At the same time, we remain firmly committed to the principles that have guided Vaswani for decades. Quality, transparency and excellence in execution continue to define every project we undertake, ensuring that each development delivers enduring value for homeowners and future generations alike.',
       'As we continue to grow, our focus remains on creating places that combine timeless design with thoughtful planning—homes and communities that simply feel right, today and for years to come.',
     ],
-    image: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1788387227/Screenshot_2026-09-03_at_3.43.34_AM_qo6cva.png',
+    image: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1792681359/DSC01094_nvxy7r.jpg',
     altText: 'Ajay Vaswani — Executive Director, Vaswani Group',
   },
   {
@@ -71,7 +71,7 @@ const LEADERS: LeaderProfile[] = [
       'Over the years I have learned that patience is part of the craft. A building made well takes the time it takes. When we respect that, families feel it the day they move in and long after.',
       'What we hope to leave behind is simple. Homes people are proud of, neighbours who look out for each other, and a name that families are glad to recommend to the people they love.',
     ],
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=85',
+    image: 'https://res.cloudinary.com/ds5s7shuo/image/upload/v1792681398/DSC01230_jxupq2.jpg',
     altText: 'Anil Advani — Managing Director, Vaswani Group',
   },
 ];
@@ -79,6 +79,7 @@ const LEADERS: LeaderProfile[] = [
 export const Leadership: React.FC = () => {
   const { setCursorVariant, resetCursor } = useCursor();
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [selectedLeader, setSelectedLeader] = useState<LeaderProfile | null>(null);
 
   const toggleExpand = (id: string) => {
     setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -117,9 +118,9 @@ export const Leadership: React.FC = () => {
         </motion.div>
 
         {/* ========================================================================= */}
-        {/* EDITORIAL PROFILE CARDS (Alternating Layout)                              */}
+        {/* EDITORIAL PROFILE CARDS (Alternating Layout, Full Portrait Images)         */}
         {/* ========================================================================= */}
-        <div className="space-y-10 sm:space-y-12">
+        <div className="space-y-10 sm:space-y-14">
           {LEADERS.map((leader, index) => {
             const isImageLeft = index % 2 === 0;
             const Icon = leader.id === 'ajay-vaswani' ? Compass : Briefcase;
@@ -131,60 +132,69 @@ export const Leadership: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-[#2C1E16] rounded-[28px] p-6 sm:p-8 lg:p-10 border border-[#4A3728]/50 shadow-[0_20px_50px_rgba(44,30,22,0.18)] text-white"
+                className="bg-[#2C1E16] rounded-[28px] p-6 sm:p-8 lg:p-12 border border-[#4A3728]/50 shadow-[0_20px_50px_rgba(44,30,22,0.18)] text-white"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
                   
-                  {/* Portrait */}
+                  {/* Portrait Column - Full & Uncropped */}
                   <div
-                    className={`lg:col-span-4 xl:col-span-4 ${
+                    className={`lg:col-span-5 xl:col-span-5 ${
                       isImageLeft ? 'order-1' : 'order-1 lg:order-2'
                     }`}
                   >
                     <div
-                      className="relative w-full aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] max-h-[380px] overflow-hidden rounded-2xl bg-[#1E140E] shadow-sm group"
-                      onMouseEnter={() => setCursorVariant('explore', 'LEADERSHIP')}
+                      className="relative w-full max-w-[440px] mx-auto lg:mx-0 rounded-2xl overflow-hidden bg-[#1A120D] border border-[#4A3728]/70 shadow-[0_16px_40px_rgba(0,0,0,0.35)] group cursor-pointer"
+                      onClick={() => setSelectedLeader(leader)}
+                      onMouseEnter={() => setCursorVariant('explore', 'VIEW PHOTO')}
                       onMouseLeave={resetCursor}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          setSelectedLeader(leader);
+                        }
+                      }}
+                      aria-label={`View full portrait of ${leader.name}`}
                     >
                       <img
                         src={leader.image}
                         alt={leader.altText}
-                        className="w-full h-full object-cover object-center filter grayscale-[15%] contrast-[1.04] brightness-[0.98] transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-hover:brightness-100"
+                        className="w-full h-auto object-contain block transition-transform duration-700 ease-out group-hover:scale-[1.015]"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#2C1E16]/80 via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute bottom-3.5 right-3.5 flex items-end justify-end pointer-events-auto">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-[#D4AF37]/50 shadow-[0_4px_16px_rgba(0,0,0,0.35)] text-white hover:border-[#D4AF37] hover:bg-black/80 hover:scale-[1.03] transition-all duration-300 group/badge cursor-default">
-                          <div className="w-5 h-5 rounded-full bg-[#D4AF37]/15 flex items-center justify-center border border-[#D4AF37]/35">
-                            <Icon className="w-3 h-3 text-[#D4AF37]" />
-                          </div>
-                          <span className="font-sans text-[11px] sm:text-[12px] tracking-[0.16em] uppercase font-semibold text-white/95 leading-none">
-                            {leader.designation}
-                          </span>
+                      
+                      {/* Subtle hover pill for full view */}
+                      <div className="absolute top-3.5 right-3.5 flex items-center justify-end pointer-events-none">
+                        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-[#D4AF37]/50 shadow-md text-white/95 text-[11px] font-sans tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <Maximize2 className="w-3 h-3 text-[#D4AF37]" />
+                          <span>Full portrait</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Content */}
+                  {/* Content Column */}
                   <div
-                    className={`lg:col-span-8 xl:col-span-8 space-y-4 ${
+                    className={`lg:col-span-7 xl:col-span-7 space-y-5 ${
                       isImageLeft ? 'order-2' : 'order-2 lg:order-1'
                     }`}
                   >
                     {/* Leader Name & Designation */}
-                    <div className="border-b border-white/20 pb-3 flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[56px] font-light text-white tracking-tight leading-[1.1]">
+                    <div className="border-b border-white/20 pb-4">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-[#D4AF37]/35 text-[#D4AF37] mb-2.5">
+                        <Icon className="w-3.5 h-3.5 text-[#D4AF37]" />
+                        <span className="font-sans text-[11px] sm:text-[12px] tracking-[0.16em] uppercase font-semibold">
+                          {leader.designation}
+                        </span>
+                      </div>
+                      <h3 className="font-editorial text-[36px] md:text-[44px] lg:text-[54px] font-light text-white tracking-tight leading-[1.1]">
                         {leader.name}
                       </h3>
-                      <span className="font-sans text-[13px] sm:text-[14px] md:text-[15px] tracking-[0.18em] uppercase text-[#D4AF37] font-medium">
-                        {leader.designation}
-                      </span>
                     </div>
 
                     {/* Featured Quote */}
                     <div className="relative pl-4 sm:pl-5 border-l-2 border-[#D4AF37] py-0.5">
-                      <blockquote className="font-sans text-[20px] md:text-[22px] lg:text-[24px] font-normal italic leading-[1.5] text-white max-w-[700px]">
+                      <blockquote className="font-sans text-[19px] md:text-[21px] lg:text-[23px] font-normal italic leading-[1.5] text-white/95 max-w-[650px]">
                         “{leader.quote}”
                       </blockquote>
                     </div>
@@ -248,6 +258,51 @@ export const Leadership: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Lightbox Modal for Full Portrait View */}
+      <AnimatePresence>
+        {selectedLeader && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-md"
+            onClick={() => setSelectedLeader(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative max-w-4xl max-h-[92vh] flex flex-col items-center bg-[#1A120D] rounded-2xl p-4 sm:p-6 border border-[#4A3728] shadow-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedLeader(null)}
+                className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/70 border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <div className="relative max-h-[76vh] overflow-hidden rounded-xl flex items-center justify-center">
+                <img
+                  src={selectedLeader.image}
+                  alt={selectedLeader.altText}
+                  className="max-h-[76vh] w-auto max-w-full object-contain block"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <h4 className="font-editorial text-2xl sm:text-3xl text-white font-light tracking-tight">
+                  {selectedLeader.name}
+                </h4>
+                <p className="font-sans text-xs sm:text-sm uppercase tracking-widest text-[#D4AF37] mt-0.5 font-medium">
+                  {selectedLeader.designation}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

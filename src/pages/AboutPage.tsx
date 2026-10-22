@@ -75,7 +75,7 @@ export const AboutPage: React.FC = () => {
           onMouseLeave={resetCursor}
         >
           <motion.img
-            src="https://res.cloudinary.com/ds5s7shuo/image/upload/v1792530476/59305241-1ae4-4b7f-913e-0169cdb7dca0.png"
+            src="https://res.cloudinary.com/ds5s7shuo/image/upload/v1792684462/8b040e1db190fa0e5850486d7634cb26_zhkk2n.jpg"
             alt="Vaswani Architectural Landmark"
             initial={{ scale: 1.05 }}
             whileInView={{ scale: 1 }}

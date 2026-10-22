@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import {
   MapPin,
   ArrowUpRight,
@@ -20,33 +20,53 @@ export const ProductsPage: React.FC = () => {
   const { setCursorVariant, resetCursor } = useCursor();
   const { openEnquiryDrawer } = useNavigation();
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const [activeTab, setActiveTab] =
-    useState<PortfolioCategory>('Delivered');
+    useState<PortfolioCategory>('Rising now');
   const [selectedProject, setSelectedProject] =
     useState<PortfolioProject | null>(null);
 
-  const TABS: PortfolioCategory[] = [
-    'Delivered',
-    'Recently handed over',
-    'Rising now',
+  const TABS: { id: PortfolioCategory; label: string }[] = [
+    { id: 'Rising now', label: 'Rising now' },
+    { id: 'Recently handed over', label: 'Recently Handed Over' },
+    { id: 'Delivered', label: 'Delivered' },
   ];
+
+  const getCategoryCount = (catId: PortfolioCategory) =>
+    PORTFOLIO_PROJECTS.filter((p) => p.category === catId).length;
 
   const luxuryEase = [0.16, 1, 0.3, 1] as const;
 
-  // Sync project modal if project query param is provided in URL
+  // Sync tab and project modal if query params are provided in URL
   useEffect(() => {
+    const tabParam = searchParams.get('tab');
+    if (tabParam) {
+      const normalized = tabParam.toLowerCase().replace(/[-_]/g, ' ');
+      if (normalized.includes('recently')) {
+        setActiveTab('Recently handed over');
+      } else if (normalized.includes('delivered')) {
+        setActiveTab('Delivered');
+      } else if (normalized.includes('rising')) {
+        setActiveTab('Rising now');
+      }
+    }
+
     const projectParam = searchParams.get('project');
     if (projectParam) {
       const match = ALL_PROJECTS.find(
         (p) => p.id === projectParam || p.id.toLowerCase() === projectParam.toLowerCase()
       );
       if (match) {
-        setSelectedProject(match);
-        setActiveTab(match.category);
+        if (match.category === 'Recently handed over') {
+          navigate(`/projects/${match.id}`);
+        } else {
+          setSelectedProject(match);
+          setActiveTab(match.category);
+        }
       }
     }
-  }, [searchParams]);
+  }, [searchParams, navigate]);
 
   const displayedProjects = PORTFOLIO_PROJECTS.filter(
     (p) => p.category === activeTab
@@ -55,8 +75,10 @@ export const ProductsPage: React.FC = () => {
   const handleCardClick = (project: PortfolioProject) => {
     if (project.externalUrl) {
       window.open(project.externalUrl, '_blank', 'noopener,noreferrer');
+    } else if (project.category === 'Recently handed over') {
+      navigate(`/projects/${project.id}`);
     } else {
-      setSelectedProject(project);
+      navigate(`/projects/${project.id}`);
     }
   };
 
@@ -75,23 +97,40 @@ export const ProductsPage: React.FC = () => {
               </h2>
             </div>
 
-            {/* Three Categories Preserved */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-              {TABS.map((tab) => {
-                const isActive = activeTab === tab;
+            {/* Three Categories Preserved in requested order: Rising now / Recently Handed Over / Delivered */}
+            <div className="inline-flex flex-wrap items-center gap-1.5 sm:gap-2 p-1.5 rounded-full bg-[#1C443B]/[0.04] border border-[#1C443B]/10 backdrop-blur-sm shadow-[inset_0_1px_3px_rgba(28,68,59,0.04)]">
+              {TABS.map(({ id, label }) => {
+                const isActive = activeTab === id;
+                const count = getCategoryCount(id);
                 return (
                   <button
-                    key={tab}
-                    onClick={() => setActiveTab(tab)}
+                    key={id}
+                    onClick={() => setActiveTab(id)}
                     onMouseEnter={() => setCursorVariant('pointer')}
                     onMouseLeave={resetCursor}
-                    className={`relative px-4 sm:px-5 py-2.5 rounded-full font-sans text-[13px] sm:text-[14px] md:text-[15px] tracking-wide uppercase font-medium transition-all duration-300 cursor-pointer ${
+                    className={`relative flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full font-sans text-[12px] sm:text-[13px] md:text-[14px] tracking-[0.06em] font-medium transition-all duration-300 cursor-pointer whitespace-nowrap ${
                       isActive
-                        ? 'bg-[#1C443B] text-[#d7c2a3] shadow-md'
-                        : 'text-[#1C443B]/70 hover:text-[#1C443B] hover:bg-[#1C443B]/5'
+                        ? 'text-[#FAF8F5]'
+                        : 'text-[#1C443B]/70 hover:text-[#1C443B] hover:bg-[#1C443B]/[0.05]'
                     }`}
                   >
-                    {tab}
+                    {isActive && (
+                      <motion.div
+                        layoutId="activePortfolioTabPill"
+                        className="absolute inset-0 rounded-full bg-[#1C443B] shadow-[0_4px_14px_rgba(28,68,59,0.22)] border border-[#8E6B47]/30"
+                        transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                      />
+                    )}
+                    <span className="relative z-10">{label}</span>
+                    <span
+                      className={`relative z-10 text-[10px] sm:text-[11px] font-mono px-2 py-0.5 rounded-full transition-colors ${
+                        isActive
+                          ? 'bg-[#8E6B47]/30 text-[#E8DFD1] border border-[#8E6B47]/30'
+                          : 'bg-[#1C443B]/[0.07] text-[#1C443B]/60'
+                      }`}
+                    >
+                      {count}
+                    </span>
                   </button>
                 );
               })}
@@ -194,6 +233,8 @@ export const ProductsPage: React.FC = () => {
                     <span>
                       {project.externalUrl
                         ? 'Visit Seascape Website →'
+                        : project.category === 'Recently handed over'
+                        ? 'Explore Project Landing Page →'
                         : 'View Details →'}
                     </span>
                   </div>
